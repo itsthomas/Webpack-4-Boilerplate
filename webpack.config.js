@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    bundle: './src/scripts/index', // generates bundle.js inside dist/js folder
+    bundle: './src/scripts/index', // generates bundle.js inside dist folder
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
