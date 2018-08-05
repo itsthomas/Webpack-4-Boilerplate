@@ -31,6 +31,17 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      // ESlint
+      {
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true,
+          configFile: './.eslintrc',
+        },
+      },
       // Babel for js and jsx files
       {
         test: /\.(js|jsx)$/,
