@@ -11,6 +11,7 @@
   "author": "Thomas Wolter",
   "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "autoprefixer": "^9.1.0",
     "babel-eslint": "^8.2.6",
     "css-loader": "^1.0.0",
