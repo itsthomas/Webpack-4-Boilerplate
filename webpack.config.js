@@ -31,6 +31,14 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      // Babel for js and jsx files
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
       // Sass and CSS
       {
         test: /\.(sa|sc|c)ss$/,
