@@ -50,7 +50,7 @@ module.exports = {
           // Copies all inline and background-images to dist/images folder
           {
             loader: 'file-loader',
-            options: { name: '[name].[hash][ext]', outputPath: 'images/' },
+            options: { name: '[name].[ext]', outputPath: 'images/' },
           },
 
           // Minify PNG, JPEG, GIF, SVG and WEBP images with imagemin
@@ -73,6 +73,16 @@ module.exports = {
                 interlaced: false,
               },
             },
+          },
+        ],
+      },
+      // Fonts
+      {
+        test: /\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: '[name].[ext]', outputPath: 'fonts/' },
           },
         ],
       },

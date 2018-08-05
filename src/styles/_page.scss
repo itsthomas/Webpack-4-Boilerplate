@@ -1,8 +1,9 @@
 body {
-	background-color: rgb(141, 183, 230);
+	background-color: rgb(148, 182, 219);
+	font-family: 'League Gothic';
 
 	h1 {
-		color: red;
+		color: rgb(185, 90, 12);
 	}
 }
 
@@ -27,5 +28,6 @@ body {
 	height: 30px;
 	transition: all 0.5s;
 	user-select: none;
+	font-size: 1.2rem;
 	background: linear-gradient(to bottom, white, black);
 }
