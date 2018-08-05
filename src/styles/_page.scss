@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(230, 206, 141);
+	background-color: rgb(141, 183, 230);
 
 	h1 {
 		color: red;
@@ -14,4 +14,18 @@ body {
 	&--leopard {
 		background: url('../images/leopard.png') no-repeat;
 	}
+}
+
+.zebra {
+	width: 300px;
+	height: 300px;
+}
+
+// For testing autoprefix via postcss
+.example {
+	display: grid;
+	height: 30px;
+	transition: all 0.5s;
+	user-select: none;
+	background: linear-gradient(to bottom, white, black);
 }
