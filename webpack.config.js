@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -14,6 +15,18 @@ module.exports = {
     // Serve this folder
     contentBase: path.join(__dirname, 'dist'),
     // overlay: true,
+    port: 3000,
+    compress: true,
+    // must be `true` for SPAs
+    historyApiFallback: true,
+    // open browser on server start
+    open: true,
+    // Activating HMR (Hot Module Replacement)
+    hot: true,
+    // Control messages in browser console
+    clientLogLevel: 'none',
+    // Console messages in terminal
+    noInfo: true,
   },
   devtool: 'source-map',
   module: {
@@ -99,5 +112,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/styles.[contenthash].css',
     }),
+    new CleanWebpackPlugin('dist', {}),
   ],
 };
