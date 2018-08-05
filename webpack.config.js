@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -19,8 +20,17 @@ module.exports = {
     rules: [
       // Sass and CSS
       {
-        test: /\.s?css/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
+          },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ],
       },
       // HTML - Pars (understand) the HTML code
       {
@@ -74,6 +84,9 @@ module.exports = {
       template: './src/index.html',
       // HTML output
       filename: './index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/styles.[contenthash].css',
     }),
   ],
 };
