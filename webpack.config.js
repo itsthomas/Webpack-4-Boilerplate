@@ -22,7 +22,7 @@ module.exports = {
         test: /\.s?css/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-      // HTML
+      // HTML - Pars (understand) the HTML code
       {
         test: /\.html$/,
         use: [
