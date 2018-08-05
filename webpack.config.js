@@ -1,7 +1,7 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -102,6 +102,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin('dist', {}),
     new HtmlWebPackPlugin({
       title: 'My App',
       // HTMl source
@@ -112,6 +113,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/styles.[contenthash].css',
     }),
-    new CleanWebpackPlugin('dist', {}),
   ],
 };
