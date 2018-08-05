@@ -16,7 +16,7 @@ module.exports = {
         use: [
           { loader: 'style-loader' },
 
-          // Generate a link CSS
+          // Generate a CSS file in Memory
           // { loader: 'css-loader', options: { url: true, sourceMap: true } },
 
           // Generate inline CSS
