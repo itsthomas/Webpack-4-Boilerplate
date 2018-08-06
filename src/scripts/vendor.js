@@ -12,7 +12,7 @@ iAmJavascriptES6();
 // Testing if spread operator is workig
 const user = {
   id: 1,
-  name: 'Antony',
+  name: 'Richard',
 };
 
 const advancedUser = {
