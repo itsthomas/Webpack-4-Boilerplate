@@ -16,6 +16,16 @@ module.exports = merge(common, {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
+      // Copy all images to dist folder and minify them
+      {
+        test: /\.(gif|png|jpe?g)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: '[name].[ext]', outputPath: 'images/' },
+          },
+        ],
+      },
     ],
   },
   devServer: {
