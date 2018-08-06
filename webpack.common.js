@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
@@ -103,6 +104,10 @@ module.exports = {
     new CleanWebpackPlugin('dist', {
       // Good for not removing shared files from build directories.
       // exclude: ['index.html'],
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
     new HtmlWebPackPlugin({
       title: 'My App - Main',
