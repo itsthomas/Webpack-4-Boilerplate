@@ -14,7 +14,7 @@ module.exports = merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../',
+              publicPath: '../', // relative path to the dist folder starting from css folder
             },
           },
           { loader: 'css-loader' },
