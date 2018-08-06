@@ -7,24 +7,19 @@ module.exports = {
   // For a single entry js file
   // entry: ['babel-polyfill', './src/scripts/index.js'],
 
-  // For multiple entry js files, which get generated directyly in dist folder
-
-  // Generating the bundles in js subfloder inside dist folder
-
   // entry: {
-  //   'js/bundle': './src/scripts/index', // generates bundle.js inside dist/js folder
-  //   'js/another': './src/scripts/another', // generates another.js inside dist/js folder
+  //   index: './src/scripts/index', // generates index.js inside dist/js folder
+  //   users: './src/scripts/users', // generates users.js inside dist/js folder
   // },
 
-  // Generating the bundles inside dist folder
-
   entry: {
-    index: './src/scripts/index', // generates index.js inside dist/js folder
-    users: './src/scripts/users', // generates users.js inside dist/js folder
+    index: ['babel-polyfill', './src/scripts/index'], // generates index.js inside dist/js folder
+    users: ['babel-polyfill', './src/scripts/users'], // generates users.js inside dist/js folder
   },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:8].bundle.js',
+    filename: 'js/[name].[hash:8].bundle.js',
   },
   module: {
     rules: [
