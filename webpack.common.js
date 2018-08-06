@@ -7,17 +7,19 @@ module.exports = {
   // entry: ['babel-polyfill', './src/scripts/index.js'],
 
   // For multiple entry js files, which get generated directyly in dist folder
+
+  // Generating the bundles in js subfloder inside dist folder
+
   // entry: {
-  //   app: "./src/scripts/app.js",
-  //   vendor: "./src/scripts/app.js",
-  // },
-  // output: {
-  //   filename: "./dist/[name].bundle.js"
+  //   'js/bundle': './src/scripts/index', // generates bundle.js inside dist/js folder
+  //   'js/another': './src/scripts/another', // generates another.js inside dist/js folder
   // },
 
-  // Generating multiple js files
+  // Generating the bundles inside dist folder
+
   entry: {
-    'js/index': './src/scripts/index', // generates index.js inside dist/js folder
+    index: './src/scripts/index', // generates index.js inside dist/js folder
+    users: './src/scripts/users', // generates users.js inside dist/js folder
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -103,11 +105,20 @@ module.exports = {
       // exclude: ['index.html'],
     }),
     new HtmlWebPackPlugin({
-      title: 'My App',
+      title: 'My App - Main',
       // HTMl source
       template: './src/index.html',
       // HTML output
       filename: './index.html',
+      excludeChunks: ['users'],
+    }),
+    new HtmlWebPackPlugin({
+      title: 'My App - Users',
+      // HTMl source
+      template: './src/users.html',
+      // HTML output
+      filename: './users.html',
+      chunks: ['users'],
     }),
   ],
 };
