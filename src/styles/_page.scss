@@ -27,8 +27,9 @@ body {
 .example {
 	display: grid;
 	height: 30px;
+	padding: 7px;
 	transition: all 0.5s;
 	user-select: none;
-	font-size: 1.2rem;
+	border-radius: 6px;
 	background: linear-gradient(to bottom, white, black);
 }
