@@ -1,8 +1,8 @@
 body {
-	background-color: rgb(140, 224, 220);
+	background-color: $main-color;
 	font-family: 'League Gothic';
 	h1 {
-		color: rgb(185, 90, 12);
+		color: $title-color;
 	}
 }
 
