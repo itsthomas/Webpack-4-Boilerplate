@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/styles/users.scss"],"names":[],"mappings":"AAAA;EACE,oBAA8B,EAC/B","file":"css/users.css","sourcesContent":[".users-body {\n  background: rgb(227, 253, 111);\n}"],"sourceRoot":""}
