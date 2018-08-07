@@ -73,6 +73,7 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
+    // Generate index.html
     new HtmlWebPackPlugin({
       title: 'My App - Main',
       // HTMl source
@@ -80,7 +81,9 @@ module.exports = {
       // HTML output
       filename: './index.html',
       excludeChunks: ['users'],
+      favicon: './src/images/apple-icon-120x120.png',
     }),
+    // Generate users.html
     new HtmlWebPackPlugin({
       title: 'My App - Users',
       // HTMl source
@@ -88,6 +91,7 @@ module.exports = {
       // HTML output
       filename: './users.html',
       chunks: ['users'],
+      favicon: './src/images/apple-icon-120x120.png',
     }),
   ],
 };
