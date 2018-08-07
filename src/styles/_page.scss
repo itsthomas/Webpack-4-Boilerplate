@@ -30,6 +30,7 @@ body {
 .example {
 	display: grid;
 	padding: 7px;
+	margin: 20px 0 25px;
 	transition: all 0.5s;
 	user-select: none;
 	border-radius: 6px;
@@ -38,4 +39,10 @@ body {
 
 .thik-border {
 	border: 6px solid burlywood;
+}
+
+.svg-background {
+	width: 200px;
+	height: 200px;
+	background: url('../images/svg.svg') no-repeat;
 }
