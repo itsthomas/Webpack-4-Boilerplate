@@ -6,6 +6,7 @@ import App from './react-app';
 // require('../../node_modules/@fortawesome/fontawesome-free/css/all.css');
 
 addFn(10, 12);
-nameFn('Richard');
+nameFn('Richard from index.js');
 
+// Testing if jQuery code works or not
 $('.zebra').addClass('thik-border');
