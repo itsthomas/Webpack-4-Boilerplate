@@ -27,10 +27,10 @@ module.exports = merge(common, {
         test: /\.(gif|png|jpe?g)$/i,
         use: [
           {
-            // url-loader converts a file (if it’s smaller than the specified size) into
-            // a Base64 URL and inserts this URL into the bundle to reduce the number of http requests
-            // it increases the build time, so it’s better to use it only for production
-            // for all the other images it uses file-loader, hence file-loader must be installed too
+            /* url-loader converts an image (if it's smaller than the specified size) into a Base64 URL 
+            and inserts this URL into the bundle to reduce the number of http requests.
+            For all the other images it uses file-loader, hence file-loader must be installed too.
+            It increases the build time, so it’s better to use it only for production. */
             loader: 'url-loader',
             options: {
               // Images larger than 40 KB won’t be inlined
