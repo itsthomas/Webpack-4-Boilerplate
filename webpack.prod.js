@@ -17,8 +17,8 @@ module.exports = merge(common, {
               publicPath: '../', // relative path to the dist folder starting from css folder
             },
           },
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader' },
+          { loader: 'css-loader', options: { url: true, sourceMap: true } },
+          { loader: 'postcss-loader', options: { url: true, sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
@@ -30,11 +30,12 @@ module.exports = merge(common, {
             // url-loader converts a file (if it’s smaller than the specified size) into
             // a Base64 URL and inserts this URL into the bundle to reduce the number of http requests
             // it increases the build time, so it’s better to use it only for production
+            // for all the other images it uses file-loader, hence file-loader must be installed too
             loader: 'url-loader',
             options: {
               // Images larger than 40 KB won’t be inlined
               limit: 40 * 1024,
-              name: '[name][hash:8].[ext]',
+              name: '[name].[ext]',
               outputPath: 'images/',
             },
           },
@@ -65,7 +66,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
+      filename: 'css/[name].css',
     }),
   ],
 });

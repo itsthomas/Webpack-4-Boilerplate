@@ -19,7 +19,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[hash:8].bundle.js',
+    filename: 'js/[name].bundle.js',
   },
   module: {
     rules: [
