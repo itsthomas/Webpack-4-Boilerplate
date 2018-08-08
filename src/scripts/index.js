@@ -1,4 +1,4 @@
-import { addFn, nameFn } from './vendor';
+import { addFn, nameFn } from './other';
 import 'jquery';
 import '../styles/styles.scss';
 import App from './react-app';

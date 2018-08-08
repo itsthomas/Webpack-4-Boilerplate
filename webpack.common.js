@@ -16,10 +16,27 @@ module.exports = {
     index: ['babel-polyfill', './src/scripts/index'], // generates index.js inside dist/js folder
     users: ['babel-polyfill', './src/scripts/users'], // generates users.js inside dist/js folder
   },
-
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].bundle.js',
+    filename: 'js/[name].[hash:8].bundle.js',
+  },
+  // asset size limit. Default 250000 bytes
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+    hints: 'warning', // false | "error" | "warning"
+  },
+  // Bundle splitting
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'initial',
+        },
+      },
+    },
   },
   module: {
     rules: [
