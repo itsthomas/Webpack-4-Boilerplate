@@ -30,9 +30,9 @@ body {
   width: 300px;
   background-size: contain !important; }
   .animal__image--leopard {
-    background: url(../images/leopard.8c31841f5169ba1dec96cd38aee5c004.png) no-repeat; }
+    background: url(../images/leopard.8c31841f.png) no-repeat; }
   .animal__image--lion {
-    background: url(../images/lion.2cc64017983ecb48e2496334a7e15e21.png) no-repeat; }
+    background: url(../images/lion.2cc64017.png) no-repeat; }
 
 .zebra {
   width: 300px;
@@ -57,4 +57,4 @@ body {
   background: url(../fonts/svg.f8ca5879.svg) no-repeat; }
 
 
-/*# sourceMappingURL=index.44ce8d92.css.map*/
+/*# sourceMappingURL=index.5ccdcbbb.css.map*/
