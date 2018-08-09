@@ -79,7 +79,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]', outputPath: 'fonts/' },
+            options: { 
+              // name: '[name].[ext]', 
+              name: devMode ? '[name].[ext]' : '[name].[hash:8].[ext]',
+              outputPath: 'fonts/' },
           },
         ],
       },
