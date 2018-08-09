@@ -36,7 +36,7 @@ module.exports = merge(common, {
             options: {
               // Images larger than 40 KB won’t be inlined
               limit: 40 * 1024,
-              name: '[name].[hash].[ext]',
+              name: '[name].[hash:8].[ext]',
               outputPath: 'images/',
             },
           },
