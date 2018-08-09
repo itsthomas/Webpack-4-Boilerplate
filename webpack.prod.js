@@ -22,14 +22,15 @@ module.exports = merge(common, {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
-      // Copy all images to dist folder and minify them
+      // Copy all images to dist folder
       {
         test: /\.(gif|png|jpe?g)$/i,
         use: [
           {
             /* url-loader converts an image (if it's smaller than the specified size) into a Base64 URL 
             and inserts this URL into the bundle to reduce the number of http requests.
-            For all the other images it uses file-loader, hence file-loader must be installed too.
+            For all the other images it uses file-loader to upload them to dist/images folder, 
+            hence file-loader must be installed too.
             It increases the build time, so it’s better to use it only for production. */
             loader: 'url-loader',
             options: {
@@ -49,7 +50,7 @@ module.exports = merge(common, {
               },
               // optipng.enabled: false will disable optipng
               optipng: {
-                enabled: false,
+                enabled: true,
               },
               pngquant: {
                 quality: '65-90',

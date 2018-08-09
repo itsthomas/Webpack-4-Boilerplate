@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // filename: 'js/[name].[hash:8].bundle.js',
-    filename: devMode ? 'js/[name].bundle.js' : 'js/[name].[chunkhash:8].bundle.js',
+    filename: devMode ? 'js/[name].bundle.js' : 'js/[name].[chunkhash:8].bundle.js', // use [chunkhash] only for production
   },
   // asset size limit. Default 250000 bytes
   performance: {
@@ -73,7 +73,7 @@ module.exports = {
           },
         ],
       },
-      // Font loader
+      // Font loader - Uploads all fonts to dist/fonts folder
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [

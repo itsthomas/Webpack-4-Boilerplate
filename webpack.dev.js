@@ -17,7 +17,7 @@ module.exports = merge(common, {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
-      // Copy all images to dist folder and minify them
+      // Copy all images to dist folder
       {
         test: /\.(gif|png|jpe?g)$/i,
         use: [
@@ -33,8 +33,6 @@ module.exports = merge(common, {
   devServer: {
     // Serve this folder
     contentBase: path.resolve(__dirname, 'dist'),
-    // Our assets folder relative to dist folder. For now everyting is inside dist
-    // publicPath: '/',
     // If you don't specify a port, port 8080 will be used by default
     port: 3000,
     compress: true,
@@ -48,6 +46,6 @@ module.exports = merge(common, {
     clientLogLevel: 'none',
     // Console messages in terminal
     noInfo: true,
-    // overlay: true,
+    overlay: true,
   },
 });
