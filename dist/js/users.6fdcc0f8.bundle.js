@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"./src/scripts/users.js":function(s,e,r){"use strict";r("./src/styles/users.scss"),console.log("This comes from users.js, which is our second entry and servers users.html file")},"./src/styles/users.scss":function(s,e,r){},4:function(s,e,r){r("./node_modules/babel-polyfill/lib/index.js"),s.exports=r("./src/scripts/users.js")}},[[4,1,0]]]);
-//# sourceMappingURL=users.6fdcc0f8.bundle.js.map

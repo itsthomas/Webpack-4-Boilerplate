@@ -24,7 +24,8 @@ module.exports = merge(common, {
       },
       // Copy all images to dist folder
       {
-        test: /\.(gif|png|jpe?g)$/i,
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        exclude: [/fonts/],
         use: [
           {
             /* url-loader converts an image (if it's smaller than the specified size) into a Base64 URL 

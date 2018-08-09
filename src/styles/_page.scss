@@ -19,13 +19,11 @@ body {
 		background: url('../images/lion.png') no-repeat;
 	}
 }
-
 .zebra {
 	width: 300px;
 	height: 300px;
 	position: relative;
 }
-
 // For testing autoprefix via postcss
 .example {
 	display: grid;
@@ -36,13 +34,14 @@ body {
 	border-radius: 6px;
 	background: linear-gradient(to bottom, white, black);
 }
-
 .thik-border {
 	border: 6px solid burlywood;
 }
-
 .svg-background {
 	width: 200px;
 	height: 200px;
 	background: url('../images/svg.svg') no-repeat;
+}
+.hmr-input {
+	width: 300px;
 }
