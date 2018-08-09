@@ -35,7 +35,7 @@ module.exports = merge(common, {
             It increases the build time, so it’s better to use it only for production. */
             loader: 'url-loader',
             options: {
-              // Images larger than 40 KB won’t be inlined
+              // Images larger than 30 KB won’t be inlined
               limit: 40 * 1024,
               name: '[name].[hash:8].[ext]',
               outputPath: 'images/',
