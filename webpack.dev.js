@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -11,7 +12,7 @@ module.exports = merge(common, {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: 'style-loader', options: { sourceMap: true } },
           { loader: 'css-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
@@ -28,6 +29,7 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     // Serve this folder
     contentBase: path.resolve(__dirname, 'dist'),

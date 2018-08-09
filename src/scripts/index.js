@@ -5,7 +5,7 @@ import App from './react-app';
 // Font-Awesome 5.2
 // require('../../node_modules/@fortawesome/fontawesome-free/css/all.css');
 
-addFn(10, 12);
+addFn();
 nameFn('Richard from index.js');
 
 // Testing if jQuery code works or not

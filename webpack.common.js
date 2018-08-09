@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';    //devMode = undefined
 
 module.exports = {
   // For a single entry js file
@@ -18,7 +19,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[hash:8].bundle.js',
+    // filename: 'js/[name].[hash:8].bundle.js',
+    filename: devMode ? 'js/[name].bundle.js' : 'js/[name].[chunkhash:8].bundle.js',
   },
   // asset size limit. Default 250000 bytes
   performance: {
@@ -28,12 +30,14 @@ module.exports = {
   },
   // Bundle splitting
   optimization: {
+    runtimeChunk: 'single',
+    namedModules: true,
     splitChunks: {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'initial',
+          chunks: 'all',
         },
       },
     },
