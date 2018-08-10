@@ -108,7 +108,7 @@ module.exports = {
       // HTML output
       filename: './index.html',
       title: 'My App - Main',
-      hash: true,
+      // hash: true,
       excludeChunks: ['users'], // vendor.css and vendor.bundle.js get added automaticaly
       favicon: './src/images/apple-icon-120x120.png',
     }),
@@ -119,7 +119,7 @@ module.exports = {
       // HTML output
       filename: './users.html',
       title: 'My App - Users',
-      hash: true,
+      // hash: true,
       chunks: ['users', 'vendor'], // Adding vendor.css and vendor.bundle.js to users.html
       favicon: './src/images/apple-icon-120x120.png',
     }),
