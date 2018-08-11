@@ -29,7 +29,7 @@ module.exports = {
     maxAssetSize: 512000,
     hints: 'warning', // false | "error" | "warning"
   },
-  // Bundle splitting
+  // Code splitting (Bundle splitting)
   // Seperates third party code from our bundle.js & uses them to generate a new file called vendor.js
   optimization: {
     runtimeChunk: 'single',
@@ -110,6 +110,7 @@ module.exports = {
       title: 'My App - Main',
       // hash: true,
       excludeChunks: ['users'], // vendor.css and vendor.bundle.js get added automaticaly
+      // chunks: ['index', 'vendor'], // is exactly the same as above line
       favicon: './src/images/apple-icon-120x120.png',
     }),
     // Generate users.html
