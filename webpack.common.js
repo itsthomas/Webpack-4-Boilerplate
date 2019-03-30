@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -16,18 +17,20 @@ module.exports = {
 
   entry: {
     index: ['babel-polyfill', './src/scripts/index'], // generates index.js inside dist/js folder
-    users: ['babel-polyfill', './src/scripts/users'], // generates users.js inside dist/js folder
+    users: ['babel-polyfill', './src/scripts/users'] // generates users.js inside dist/js folder
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     // filename: 'js/[name].[hash:8].bundle.js',
-    filename: devMode ? 'js/[name].bundle.js' : 'js/[name].[chunkhash:8].bundle.js', // use [chunkhash] only for production
+    filename: devMode
+      ? 'js/[name].bundle.js'
+      : 'js/[name].[chunkhash:8].bundle.js' // use [chunkhash] only for production
   },
   // asset size limit. Default 250000 bytes
   performance: {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
-    hints: 'warning', // false | "error" | "warning"
+    hints: 'warning' // false | "error" | "warning"
   },
   // Code splitting (Bundle splitting)
   // Seperates third party code from our bundle.js & uses them to generate a new file called vendor.js
@@ -39,10 +42,10 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'all',
-        },
-      },
-    },
+          chunks: 'all'
+        }
+      }
+    }
   },
   module: {
     rules: [
@@ -54,16 +57,16 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           emitWarning: true,
-          configFile: './.eslintrc',
-        },
+          configFile: './.eslintrc'
+        }
       },
       // Babel for js and jsx files
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
       // HTML - Pars (understand) the HTML code
       {
@@ -71,9 +74,9 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
+            options: { minimize: true }
+          }
+        ]
       },
       // Font loader - Uploads all fonts to dist/fonts folder
       {
@@ -85,21 +88,21 @@ module.exports = {
             options: {
               // name: '[name].[ext]',
               name: devMode ? '[name].[ext]' : '[name].[hash:8].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
-      },
-    ],
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {
+    new CleanWebpackPlugin({
       // Good for not removing shared files from build directories.
       // exclude: ['index.html'],
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
+      jQuery: 'jquery'
     }),
     // Generate index.html
     new HtmlWebPackPlugin({
@@ -111,7 +114,7 @@ module.exports = {
       // hash: true,
       excludeChunks: ['users'], // vendor.css and vendor.bundle.js get added automaticaly
       // chunks: ['index', 'vendor'], // is exactly the same as above line
-      favicon: './src/images/apple-icon-120x120.png',
+      favicon: './src/images/apple-icon-120x120.png'
     }),
     // Generate users.html
     new HtmlWebPackPlugin({
@@ -122,7 +125,7 @@ module.exports = {
       title: 'My App - Users',
       // hash: true,
       chunks: ['users', 'vendor'], // Adding vendor.css and vendor.bundle.js to users.html
-      favicon: './src/images/apple-icon-120x120.png',
-    }),
-  ],
+      favicon: './src/images/apple-icon-120x120.png'
+    })
+  ]
 };
